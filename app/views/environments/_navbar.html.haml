@@ -1,0 +1,9 @@
+.navbar.navbar-default{role: 'navigation'}
+  %ul.nav.navbar-nav
+    %li{class: "#{nav_item_classname('/')}"}
+      %a{href: '/'}
+        Home
+    %li{class: "#{nav_item_classname(envs_path)}"}
+      %a{href: '/envs'}
+        Environments
+  

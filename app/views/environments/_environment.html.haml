@@ -1,0 +1,16 @@
+%li.list-group-item
+  %h4.env-name
+    = @name
+  .env-status
+    - status_type = env_status_type()
+    - if status_type == :production
+      %span.label{class: 'label-primary'}
+        Production
+    - elsif status_type == :free
+      %span.label{class: 'label-success'}
+        Free
+    - elsif status_type == :in_use
+      %span.label{class: 'label-warning'}
+        In use
+    %span.env-status-text
+      = env_status(env)

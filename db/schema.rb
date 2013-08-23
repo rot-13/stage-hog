@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130814142808) do
 
-  create_table "envrionments", :force => true do |t|
+  create_table "environments", :force => true do |t|
     t.integer  "project_id"
     t.string   "name"
     t.boolean  "is_production"

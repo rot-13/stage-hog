@@ -1,4 +1,8 @@
 StageHog::Application.routes.draw do
+   
+  match 'project/:id' => 'project#show'
+  root :to => 'project#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
