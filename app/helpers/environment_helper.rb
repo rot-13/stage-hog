@@ -3,7 +3,8 @@ module EnvironmentHelper
     if env.is_production
       ''
     else
-      env.using_user.blank? ? '' : "In use by #{env.using_user.unique_id}"
+      text = env.using_user.blank? ? '' : "In use by #{env.using_user.nickname}"
+      text += ": '#{env.use_reason}'" if env.using_user.present? and env.use_reason.present?
     end
   end
 

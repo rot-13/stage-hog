@@ -38,6 +38,8 @@ gem 'bootstrap-sass'
 gem 'figaro'
 gem 'haml-rails'
 gem 'mysql2'
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :development do
   gem 'better_errors'

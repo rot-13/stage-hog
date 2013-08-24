@@ -1,0 +1,8 @@
+.page-header
+  %h1
+    Projects for
+    = current_user.nickname
+
+%ul.list-group
+  - current_user.projects.each do |prj|
+    = link_to prj.name, prj

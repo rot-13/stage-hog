@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814142808) do
+ActiveRecord::Schema.define(:version => 20130824101353) do
 
   create_table "environments", :force => true do |t|
     t.integer  "project_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130814142808) do
     t.integer  "in_use_by"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.text     "use_reason"
   end
 
   create_table "projects", :force => true do |t|
@@ -30,10 +31,13 @@ ActiveRecord::Schema.define(:version => 20130814142808) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "unique_id"
+    t.integer  "unique_id"
     t.string   "access_token"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "nickname"
+    t.string   "email"
+    t.string   "image_url"
   end
 
 end

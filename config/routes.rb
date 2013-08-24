@@ -1,6 +1,7 @@
 StageHog::Application.routes.draw do
-   
-  match 'project/:id' => 'project#show'
+
+  resources :project, only: [:index, :show]
+  match '/auth/:provider/callback', to: 'sessions#create'
   root :to => 'project#index'
 
   # The priority is based upon order of creation:
