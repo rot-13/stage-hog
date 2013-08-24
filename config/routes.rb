@@ -1,8 +1,9 @@
 StageHog::Application.routes.draw do
 
   resources :project, only: [:index, :show]
-  match '/auth/:provider/callback', to: 'sessions#create'
-  root :to => 'project#index'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  get '/auth/:provider', :to => 'session#nothing', :as => 'sign_in', :defaults => {:provider => :github}
+  root :to => 'landing_page#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
