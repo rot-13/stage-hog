@@ -1,7 +1,5 @@
-.page-header
-  %h1><
-    = @project.name
-
+- content_for :page_title do
+  = @project.name
 %ul.list-group
   - @project.environments.each do |env|
     = render env

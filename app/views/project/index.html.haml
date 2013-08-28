@@ -1,8 +1,8 @@
-.page-header
-  %h1
-    Projects for
-    = current_user.nickname
-
+- content_for :page_title do
+  My Projects
 %ul.list-group
   - current_user.projects.each do |prj|
-    = link_to prj.name, prj
+    %li.list-group-item
+      = link_to prj.name, prj, class:'project-name'
+      .environment-count
+        = pluralize(prj.environments.count, 'Environment')

@@ -1,3 +1,11 @@
 // Place all the styles related to the Project controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project-name {
+  font-size: 30px;
+  display: block;
+}
+.environment-count {
+  font-size: 14px;
+  color: #ccc;
+}
