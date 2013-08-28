@@ -1,5 +1,5 @@
 class LandingPageController < ApplicationController
   layout false
-  def home
+  def landing_page
   end
 end

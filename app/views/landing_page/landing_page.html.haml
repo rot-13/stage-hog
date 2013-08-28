@@ -3,12 +3,9 @@
   %head
     %title
       StageHog - Welcome!
-    = stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-    = stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"
-    = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+    = render :partial => '/common_head'
     = stylesheet_link_tag    "landing_page/landing_page", :media => "all"
     = javascript_include_tag "landing_page"
-    = csrf_meta_tags
 
   %body
     .jumbotron.jt-landing
