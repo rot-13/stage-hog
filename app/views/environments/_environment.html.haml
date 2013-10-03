@@ -14,3 +14,9 @@
         In use
     %span.env-status-text
       = env_status(environment)
+
+  - if environment.url.present?
+    %span.env-url
+      %i.icon-globe
+      %a{href: environment.url}><
+        = environment.url

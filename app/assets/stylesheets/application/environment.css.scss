@@ -2,7 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.env-status-text {
-  color: #ccc;
-  margin-left: 10px;
+.env-status {
+  display: inline-block;
+  .env-status-text {
+    color: #ccc;
+    margin-left: 10px;
+  }
+}
+
+
+.env-url {
+  float: right;
+  .icon-globe {
+    margin-right: 5px;
+  }
 }
