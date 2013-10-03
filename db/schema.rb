@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828144150) do
+ActiveRecord::Schema.define(:version => 20131003143821) do
 
   create_table "environments", :force => true do |t|
     t.integer  "project_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130828144150) do
     t.string   "nickname"
     t.string   "email"
     t.string   "image_url"
+    t.string   "ey_token"
   end
 
 end
