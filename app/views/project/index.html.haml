@@ -1,8 +1,14 @@
 - content_for :page_title do
   My Projects
-%ul.list-group
-  - current_user.projects.each do |prj|
-    %li.list-group-item
-      = link_to prj.name, prj, class:'project-name'
-      .environment-count
-        = pluralize(prj.environments.count, 'Environment')
+.projects-container
+  - 11.times do
+    %ul.list-group.project-box
+      - current_user.projects.each do |prj|
+        %li.list-group-item
+          .project-name
+            = prj.name
+          .environment-count
+            = pluralize(prj.environments.count, 'Environment')
+          %ul.list-group
+            - prj.environments.each do |env|
+              = render env

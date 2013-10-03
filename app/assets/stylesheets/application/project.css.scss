@@ -1,8 +1,22 @@
 // Place all the styles related to the Project controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.projects-container {
+  text-align: center;
+}
+
+.project-box {
+  display: inline-block;
+  text-align: left;
+}
+
 .project-name {
-  font-size: 30px;
+  font-family: Courier New;
+  font-weight: bold;
+  color: #3a1205;
+  font-size: 36px;
+  text-shadow: 2px 2px 2px #ccc;
   display: block;
 }
 .environment-count {

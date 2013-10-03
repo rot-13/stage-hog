@@ -1,6 +1,4 @@
 %li.list-group-item
-  %h4.env-name
-    = environment.name
   .env-status
     - status_type = env_status_type(environment)
     - if status_type == :production
@@ -12,11 +10,13 @@
     - elsif status_type == :in_use
       %span.label{class: 'label-warning'}
         In use
-    %span.env-status-text
-      = env_status(environment)
-
+  %h4.env-name
+    = environment.name
+  .env-status-text
+    = env_status(environment)
   - if environment.url.present?
-    %span.env-url
+    .env-url
       %i.icon-globe
-      %a{href: environment.url}><
+      &nbsp;
+      %a{href: environment.url, target:'_blank'}><
         = environment.url
