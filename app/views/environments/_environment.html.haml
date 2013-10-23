@@ -1,6 +1,6 @@
 %li.list-group-item
+  - status_type = env_status_type(environment)
   .env-status
-    - status_type = env_status_type(environment)
     - if status_type == :production
       %span.label{class: 'label-primary'}
         Production
@@ -9,9 +9,15 @@
         Free
     - elsif status_type == :in_use
       %span.label{class: 'label-warning'}
-        In use
+        In use by
+        = environment.using_user.nickname
   %h4.env-name
-    = environment.name
+    - if status_type == :production
+      = environment.name
+    - elsif status_type == :free
+      = link_to environment.name, use_environment_url(id: environment.id)
+    - elsif status_type == :in_use
+      = link_to environment.name, free_environment_url(id: environment.id)
   .env-status-text
     = env_status(environment)
   - if environment.url.present?
