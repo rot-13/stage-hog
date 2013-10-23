@@ -11,8 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+
 body {
   background-color: #F5E1E8;
+}
+
+.container {
+  max-width: 100%;
 }
 
 .page-header {

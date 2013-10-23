@@ -19,7 +19,6 @@ end
 gem 'jquery-rails'
 gem 'awesome_print'
 
-gem 'bootstrap-sass'
 gem 'figaro'
 gem 'haml-rails'
 gem 'mysql2'

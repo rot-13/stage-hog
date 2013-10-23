@@ -1,14 +1,16 @@
 - content_for :page_title do
   My Projects
 .projects-container
-  - 11.times do
-    %ul.list-group.project-box
-      - current_user.projects.each do |prj|
-        %li.list-group-item
-          .project-name
+  .panel-group#project-accordion
+    - current_user.projects.each do |prj|
+      .panel.panel-default
+        .panel-heading
+          %a.accordion-toggle.project-name{href: "#project#{prj.id}", 'data-toggle' => 'collapse', 'data-parent' => '#project-accordion'}
             = prj.name
           .environment-count
             = pluralize(prj.environments.count, 'Environment')
-          %ul.list-group
-            - prj.environments.each do |env|
-              = render env
+        .panel-collapse.collapse{id: "project#{prj.id}"}
+          .panel-body
+            %ul.list-group
+              - prj.environments.each do |env|
+                = render env
