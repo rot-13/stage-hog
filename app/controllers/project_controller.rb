@@ -1,5 +1,5 @@
 class ProjectController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = current_user.authorized_projects
   end
 end

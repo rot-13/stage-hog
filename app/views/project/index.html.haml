@@ -2,7 +2,7 @@
   My Projects
 .projects-container
   .panel-group#project-accordion
-    - current_user.projects.each do |prj|
+    - @projects.each do |prj|
       .panel.panel-default
         .panel-heading
           %a.accordion-toggle.project-name{href: "#project#{prj.id}", 'data-toggle' => 'collapse', 'data-parent' => '#project-accordion'}

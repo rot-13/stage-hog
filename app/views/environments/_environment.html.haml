@@ -12,12 +12,12 @@
         In use by
         = environment.using_user.nickname
   %h4.env-name
-    - if status_type == :production
-      = environment.name
-    - elsif status_type == :free
+    - if status_type == :free
       = link_to environment.name, use_environment_url(id: environment.id)
-    - elsif status_type == :in_use
+    - elsif status_type == :in_use and environment.using_user.id == current_user.id
       = link_to environment.name, free_environment_url(id: environment.id)
+    - else
+      = environment.name
   .env-status-text
     = env_status(environment)
   - if environment.url.present?
